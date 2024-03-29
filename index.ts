@@ -1,8 +1,10 @@
 import { Colors } from "./common/colors.js";
 import { convertTypes, timestamp } from "./common/misc.js";
+import LoadingAnimation from './common/loading_animation';
 
 export {
-    Colors as Colors
+    Colors as Colors,
+    LoadingAnimation as LoadingAnimation
 }
 
 export const Tags = {
