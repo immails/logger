@@ -1,5 +1,6 @@
 {
     "exclude": ["./test.ts"],
+    "include": ["./**/*"],
     "compilerOptions": {
         "outDir": "dist",
         "target": "ESNext",
