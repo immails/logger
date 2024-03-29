@@ -38,7 +38,8 @@ export const Logger = {
     * Logger.log(Tags.get("customtag?"), "some other", "value", true, 0)
     */
     log: (tags : string | string[], ...data : any) => {
-        console.info(`${timestamp()}${Colors.SYS.RESET}${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(Logger.config.log_args_separator) + Colors.SYS.RESET}`)
+        let tags_str = tags instanceof Array ? tags.join(" ") : tags
+        console.info(`${timestamp()}${Colors.SYS.RESET}${tags_str.length > 0 ? tags_str + " " : ""}${convertTypes(data).join(Logger.config.log_args_separator) + Colors.SYS.RESET}`)
         return data
     },
     /** Returns a callable function that logs elapsed time when called. */
