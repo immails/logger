@@ -32,10 +32,11 @@ interface IConsoleLoggerTag {
     label_color?: string,
     /** Tags dictionary key. Adds this tag to Tags dictionary, import { Tags } */
     key?: string,
+
 }
 
-export default {
-    "Logger": Logger,
-    "Colors": Colors,
-    "Tags": Tags,
+export {
+    Logger as Logger,
+    Tags as Tagas,
+    Colors as Colors
 }
