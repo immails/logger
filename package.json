@@ -4,6 +4,10 @@
   "description": "ESM/TS Logger package for my private projects. This package is not intended for public use, but uh...",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    "import": "./dist/*.js",
+    "default": "./dist/*.js"
+  },
   "files": [
     "dist/",
     "package.json"
