@@ -1,6 +1,6 @@
 {
   "name": "@_immails/logger",
-  "version": "1.0.36",
+  "version": "1.0.37",
   "description": "ESM/TS Logger package for my private projects. This package is not intended for public use, but uh...",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,10 +13,10 @@
     "package.json"
   ],
   "scripts": {
-    "prepublish": "npm version patch && tsc --build --verbose --clean",
+    "prepublish": "npm version patch && tsc --build --clean",
     "test": "tsx ./test.ts",
     "push": "git commit -a -m %npm_package_version% && git push",
-    "update": "npm version patch --no-git-tag-version && npm run push && tsc --build --verbose --clean && npm publish --access public"
+    "update": "npm version patch --no-git-tag-version && tsc --build --clean && npm publish --access public && npm run push"
   },
   "author": "immails",
   "license": "ISC"
