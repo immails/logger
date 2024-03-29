@@ -31,6 +31,7 @@ export const Tags = {
 }
 
 export const Logger = {
+    logId: -1,
     /** Log info with custom tag(s) 
     * @example <caption>Completely new tag</caption>
     * Logger.log(Tags.create({label: "EPIC/TAG"}), "some", "value", false, 1)
@@ -38,8 +39,11 @@ export const Logger = {
     * Logger.log(Tags.get("customtag?"), "some other", "value", true, 0)
     */
     log: (tags : string | string[], ...data : any) => {
+        Logger.logId += 1
+        // @ts-ignore
+        process.emit("beforePrint", Logger.logId)
         console.info(`${timestamp()}${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(Logger.config.log_args_separator) + Colors.SYS.RESET}`)
-        return data
+        return Logger.logId
     },
     /** Returns a callable function that logs elapsed time when called. */
     time: (text : string = "") : CallableFunction => {
