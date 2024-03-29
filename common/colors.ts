@@ -3,11 +3,13 @@ const $dark = (color : string) => "\x1b[0m" + color + "\x1b[2m"
 const $reset = (color : string) => "\x1b[0m" + color
 
 export const Colors = {
+    /** Color modification. Made them brighter, darker or reset */
     "SYS": {
         "RESET": "\x1b[0m",
         "BRIGHT": "\x1b[1m",
         "DIM": "\x1b[2m"
     },
+    /** Foreground colors */
     "FG": {
         "GRAY": "\x1b[90m",
         "WHITE": "\x1b[37m",
