@@ -1,10 +1,13 @@
 {
   "name": "@_immails/logger",
-  "version": "1.0.16",
+  "version": "1.0.17",
   "description": "ESM/TS Logger package for my private projects. This package is not intended for public use, but uh...",
   "main": "dist/index.ts",
   "types": "dist/index.d.ts",
-  "files": ["dist/", "package.json"],
+  "files": [
+    "dist/",
+    "package.json"
+  ],
   "scripts": {
     "prepublish": "npm version patch && tsc",
     "update": "git commit -a -m update && git push && npm version patch && tsc && npm publish --access public"
