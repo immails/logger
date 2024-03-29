@@ -44,7 +44,7 @@ export const Logger = {
     /** Returns a callable function that logs elapsed time when called. */
     time: (text : string = "") : CallableFunction => {
         let timestamp = Date.now()
-        const resolve = () => Logger.log(Tags.TIME, text + `${Colors.FG.YELLOW}${Date.now() - timestamp}${Colors.SYS.RESET}ms.`)
+        const resolve = () => Logger.log(Tags.TIME, text + `${Colors.FG.YELLOW}${(Date.now() - timestamp) / 1000}${Colors.SYS.RESET}s.`)
         return resolve
     },
     /**
