@@ -1,6 +1,6 @@
 {
   "name": "@_immails/logger",
-  "version": "1.0.49",
+  "version": "1.0.50",
   "description": "ESM/TS Logger package for my private projects. This package is not intended for public use, but uh...",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

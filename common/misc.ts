@@ -4,12 +4,12 @@ import { Colors } from "./colors.js";
 export function timestamp() : string {
     let string = ""
     let date = new Date();
-    if(Logger.config.date_enabled) string += `${Colors.SYS.DIM + Colors.FG.GRAY}[${Colors.FG.WHITE}${date.toDateString()}${Colors.FG.GRAY}]${Colors.SYS.RESET} `
+    if(Logger.config.date_enabled) string += `${Colors.SYS.DIM + Colors.FG.GRAY}[${Colors.FG.WHITE}${date.toDateString()}${Colors.FG.GRAY}] `
     if(Logger.config.time_enabled) {
         let h = date.getHours();
         let m = date.getMinutes();
         let s = date.getSeconds();
-        string += `${Colors.SYS.DIM + Colors.FG.GRAY}[${Colors.FG.WHITE}${h < 10 ? "0" + h : h}:${m < 10 ? "0" + m : m}:${s < 10 ? "0" + s : s}${Colors.FG.GRAY}]${Colors.SYS.RESET} `
+        string += `${Colors.SYS.DIM + Colors.FG.GRAY}[${Colors.FG.WHITE}${h < 10 ? "0" + h : h}:${m < 10 ? "0" + m : m}:${s < 10 ? "0" + s : s}${Colors.FG.GRAY}] `
     }
     return string
 }
