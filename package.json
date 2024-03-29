@@ -2,11 +2,11 @@
   "name": "@_immails/logger",
   "version": "1.0.4",
   "description": "ESM/TS Logger package for my private projects. This package is not intended for public use, but uh...",
-  "main": "~out/index.ts",
-  "types": "~out/index.d.ts",
+  "main": "out/index.ts",
+  "types": "out/index.d.ts",
   "scripts": {
     "prepublish": "tsc",
-    "publish": "npm version patch && tsc && npm publish"
+    "publish": "npm version patch && npm publish --access public"
   },
   "author": "immails",
   "license": "ISC"
