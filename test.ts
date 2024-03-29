@@ -14,3 +14,5 @@ Logger.config.log_args_separator = ", ";
 Logger.info("Example info", "hello world!")
 Logger.log(Tags.get("custom"), "Custom tag", "hello tag!")
 Logger.log(another, "Another custom tag", "hello another tag!")
+let thing = Logger.time("the: ");
+setTimeout(() => thing(), 1000)

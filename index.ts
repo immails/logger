@@ -21,6 +21,8 @@ export const Tags = {
     /** Returns tag by key or INFO if it's not found */
     "get": (key : string = "INFO") : string => key in Tags ? Tags[key] : [Tags.INFO],
     /** Green tag with INFO label */
+    "TIME": `${Colors.FG.RESETCYAN}[${Colors.FG.LIGHTCYAN}TIME${Colors.FG.RESETCYAN}]${Colors.SYS.RESET}`,
+    /** Green tag with INFO label */
     "INFO": `${Colors.FG.RESETGREEN}[${Colors.FG.LIGHTGREEN}INFO${Colors.FG.RESETGREEN}]${Colors.SYS.RESET}`,
     /** Yellow tag with WARN label */
     "WARN": `${Colors.FG.RESETYELLOW}[${Colors.FG.LIGHTYELLOW}WARN${Colors.FG.RESETYELLOW}]${Colors.SYS.RESET}`,
@@ -38,6 +40,12 @@ export const Logger = {
     log: (tags : string | string[], ...data : any) => {
         console.info(`${timestamp()}${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(Logger.config.log_args_separator) + Colors.SYS.RESET}`)
         return data
+    },
+    /** Returns a callable function that logs elapsed time when called. */
+    time: (text : string = "") : CallableFunction => {
+        let timestamp = Date.now()
+        const resolve = () => Logger.log(Tags.TIME, text + `${Colors.FG.YELLOW}${Date.now() - timestamp}${Colors.SYS.RESET}ms.`)
+        return resolve
     },
     /**
     * @example <caption>Log info</caption>
