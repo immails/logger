@@ -1,5 +1,5 @@
-import { Logger } from "..";
-import { Colors } from "./colors";
+import { Logger } from "../index.js";
+import { Colors } from "./colors.js";
 
 export function timestamp() : string {
     let string = ""

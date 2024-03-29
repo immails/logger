@@ -1,5 +1,5 @@
-import { Colors } from "./common/colors";
-import { convertTypes, timestamp } from "./common/misc";
+import { Colors } from "./common/colors.js";
+import { convertTypes, timestamp } from "./common/misc.js";
 
 export {
     Colors as Colors
