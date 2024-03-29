@@ -2,10 +2,12 @@ import { Colors } from "./common/colors";
 import { convertTypes, timestamp } from "./common/misc";
 
 export {
-    Colors as Colors
+    Colors as Colors,
+    Tags as Tags,
+    Logger as Logger,
 }
 
-export const Tags = {
+const Tags = {
     /** Creates a custom console logger tag */
     "createCustom": ({label, brackets_color = Colors.FG.RESETGREEN, label_color = Colors.FG.LIGHTGREEN, key } : IConsoleLoggerTag) : string  => {
         let string = brackets_color + `${brackets_color}[${label_color + label + brackets_color}]` + Colors.SYS.RESET;
@@ -17,7 +19,7 @@ export const Tags = {
     "ERROR": `${Colors.FG.RESETRED}[${Colors.FG.LIGHTRED}ERROR${Colors.FG.RESETRED}]${Colors.SYS.RESET}`
 }
 
-export const Logger = {
+const Logger = {
     log: (tags : string | string[] | "INFO" | "WARN" | "ERROR", ...data : any) => {
         console.info(`${timestamp()} ${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(" ") + Colors.SYS.RESET}`)
         return data
