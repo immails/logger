@@ -36,7 +36,7 @@ export const Logger = {
     * Logger.log(Tags.get("customtag?"), "some other", "value", true, 0)
     */
     log: (tags : string | string[], ...data : any) => {
-        console.info(`${timestamp()} ${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(" ") + Colors.SYS.RESET}`)
+        console.info(`${timestamp()}${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(Logger.config.log_args_separator) + Colors.SYS.RESET}`)
         return data
     },
     /**
@@ -53,7 +53,16 @@ export const Logger = {
     * @example <caption>Log error</caption>
     * Logger.error("some", "error!!")
     */
-    error: (...data : any) => Logger.log(Tags.ERROR, ...data)
+    error: (...data : any) => Logger.log(Tags.ERROR, ...data),
+    /** Logger config */
+    config: {
+        /** Logger args separator string. <Space> by default. Set empty to disable separation */
+        log_args_separator: " ",
+        /** Should logs include time? */
+        time_enabled: true,
+        /** Should logs also include date? */
+        date_enabled: false,
+    }
 }
 
 interface IConsoleLoggerTag {
