@@ -1,12 +1,6 @@
 import { Colors } from "./common/colors";
 import { convertTypes, timestamp } from "./common/misc";
 
-export {
-    Colors as Colors,
-    Tags as Tags,
-    Logger as Logger,
-}
-
 const Tags = {
     /** Creates a custom console logger tag */
     "createCustom": ({label, brackets_color = Colors.FG.RESETGREEN, label_color = Colors.FG.LIGHTGREEN, key } : IConsoleLoggerTag) : string  => {
@@ -38,4 +32,10 @@ interface IConsoleLoggerTag {
     label_color?: string,
     /** Tags dictionary key. Adds this tag to Tags dictionary, import { Tags } */
     key?: string,
+}
+
+export default {
+    "Logger": Logger,
+    "Colors": Colors,
+    "Tags": Tags,
 }
