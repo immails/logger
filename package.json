@@ -6,7 +6,7 @@
   "types": "out/index.d.ts",
   "scripts": {
     "prepublish": "npm version patch && tsc",
-    "update": "npm version patch && tsc && npm publish --access public"
+    "update": "git commit -a -m update && git push && npm version patch && tsc && npm publish --access public"
   },
   "author": "immails",
   "license": "ISC"
