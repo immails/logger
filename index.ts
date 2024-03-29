@@ -18,7 +18,7 @@ export const Tags = {
 }
 
 export const Logger = {
-    log: (tags : string | string[] | "INFO" | "WARN" | "ERROR", ...data : any) => {
+    log: (tags : string | string[], ...data : any) => {
         console.info(`${timestamp()} ${tags instanceof Array ? tags.join(" ") : tags} ${convertTypes(data).join(" ") + Colors.SYS.RESET}`)
         return data
     },
