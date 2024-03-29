@@ -5,8 +5,8 @@
   "main": "out/index.ts",
   "types": "out/index.d.ts",
   "scripts": {
-    "prepublish": "tsc",
-    "publish": "npm version patch && npm publish --access public"
+    "prepublish": "npm version patch && tsc",
+    "update": "npm version patch && tsc && npm publish --access public"
   },
   "author": "immails",
   "license": "ISC"
