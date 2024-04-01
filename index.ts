@@ -40,7 +40,7 @@ export const Logger = {
     * Logger.log(Tags.get("customtag?"), "some other", "value", true, 0)
     */
     log: (tags : string | string[], ...data : any) => {
-        let tags_str = tags instanceof Array ? tags.join(" ") : tags
+        let tags_str = tags instanceof Array ? tags.map((tag) => Tags.get(tag)).join(" ") : Tags.get(tags)
         console.info(`${timestamp()}${Colors.SYS.RESET}${tags_str.length > 0 ? tags_str + " " : ""}${convertTypes(data).join(Logger.config.log_args_separator) + Colors.SYS.RESET}`)
         return data
     },
