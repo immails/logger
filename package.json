@@ -1,6 +1,6 @@
 {
   "name": "@_immails/logger",
-  "version": "1.0.54",
+  "version": "1.0.55",
   "description": "ESM/TS Logger package for my private projects. This package is not intended for public use, but uh...",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -13,11 +13,18 @@
     "package.json"
   ],
   "scripts": {
-    "prepublish": "npm version patch && tsc --build --clean",
+    "rimraf": "./node_modules/rimraf/bin.js",
+    "clean": "rimraf dist/",
     "test": "tsx ./test.ts",
     "push": "git commit -a -m %npm_package_version% && git push",
-    "update": "tsc --build --clean && npm version patch --no-git-tag-version && npm publish --access public && npm run push"
+    "update": "npm run clean && tsc --build --verbose && npm version patch --no-git-tag-version && npm publish --access public && npm run push"
   },
   "author": "immails",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^3.0.1"
+  },
+  "dependencies": {
+    "@types/node": "^20.12.2"
+  }
 }
