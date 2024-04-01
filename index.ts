@@ -21,7 +21,7 @@ export const Tags = {
         return string
     },
     /** Returns tag by key or INFO if it's not found */
-    "get": (key : string = "INFO") : string => key in Tags ? Tags[key] : [Tags.INFO],
+    "get": (key : string = "INFO") : string => key in Tags ? Tags[key] : key,
     /** Green tag with INFO label */
     "TIME": `${Colors.FG.RESETCYAN}[${Colors.FG.LIGHTCYAN}TIME${Colors.FG.RESETCYAN}]${Colors.SYS.RESET}`,
     /** Green tag with INFO label */
